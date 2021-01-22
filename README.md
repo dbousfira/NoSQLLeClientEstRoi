@@ -40,11 +40,11 @@ Copy up and running follow these simple steps.
     git clone https://github.com/dbousfira/le-client-est-roi
     ```
 
-3. Create src/.env file and replace infos between <>:
+3. Create .env file and add next line by replacing infos between <>:
 
-    DB_ADDRESS=mongodb://<localhost>:<port>/<db>
+    DB_ADDRESS=mongodb://\<user\>:\<pwd\>@\<localhost\>:\<port\>/\<db\>
 
-4. Import [CSV file](https://github.com/dbousfira/le-client-est-roi/blob/main/data/population_by_country_2020.csv) on Robo3t
+4. Import [CSV file](https://github.com/dbousfira/le-client-est-roi/blob/main/data/country.csv) on Robo3t into a new collection named *country*
 
 5. Create a conda virtual environment with
 
@@ -58,18 +58,18 @@ Copy up and running follow these simple steps.
 * Launch Flask:
 
     ```sh
-    $env:FLASK_APP = "src/main.py"
+    $env:FLASK_APP = "src/api.py"
     flask run
     ```
 
 * créer une fonction qui retourne le pays qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays
 
-    Go to http://127.0.0.1:5000/<country_name>.
+    Go to http://127.0.0.1:5000/\<country_name\>.
     => [France](http://127.0.0.1:5000/France) (http://127.0.0.1:5000/France)
 
 * créer une fonction qui insert un nouveau pays avec des données random (on précise uniquement le pays)
 
-    http://127.0.0.1:5000/<country_name> w/ *method POST* (use Postman for example...).
+    http://127.0.0.1:5000/\<country_name\> w/ *method POST* (use Postman for example...).
     => http://127.0.0.1:5000/France
 
 * réaliser une fonction pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
